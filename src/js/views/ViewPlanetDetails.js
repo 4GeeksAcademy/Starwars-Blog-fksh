@@ -19,6 +19,15 @@ export const ViewPlanetDetails = () => {
       {details ? (
         <div>
           <h1>{details.name}</h1>
+          <img
+            src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+            alt={`${details.name} Image`}
+            className="img-fluid"
+            onError={(e) =>
+              (e.target.src =
+                "https://starwars-visualguide.com/assets/img/placeholder.jpg")
+            }
+          />
           <p>Climate: {details.climate}</p>
           <p>Population: {details.population}</p>
           <p>Terrain: {details.terrain}</p>

@@ -19,6 +19,15 @@ export const ViewStarshipDetails = () => {
       {details ? (
         <div>
           <h1>{details.name}</h1>
+          <img
+            src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
+            alt={`${details.name} Image`}
+            className="img-fluid"
+            onError={(e) =>
+              (e.target.src =
+                "https://starwars-visualguide.com/assets/img/placeholder.jpg")
+            }
+          />
           <p>Manufacturer: {details.manufacturer}</p>
           <p>Length: {details.length}</p>
           <p>Crew: {details.crew}</p>

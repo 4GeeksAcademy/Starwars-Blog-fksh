@@ -7,6 +7,8 @@ export const CharacterCard = ({ character }) => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
+  console.log("Character data:", character); // Debugging line
+
   const goToDetailsPage = () => {
     navigate(`/character/${character.uid}`); // Use character.uid to navigate to the correct URL
   };

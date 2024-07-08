@@ -23,10 +23,6 @@ export const ViewCharacterDetails = () => {
             src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
             alt={`${details.name} Image`}
             className="img-fluid"
-            onError={(e) =>
-              (e.target.src =
-                "https://starwars-visualguide.com/assets/img/placeholder.jpg")
-            } // Placeholder for broken images
           />
           <p>Height: {details.height}</p>
           <p>Mass: {details.mass}</p>

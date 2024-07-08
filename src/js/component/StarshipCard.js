@@ -16,8 +16,16 @@ export const StarshipCard = ({ starships }) => {
   };
 
   return (
-    <div className="card">
-      <img src="..." className="card-img-top" alt="Character Image" />
+    <div className="card" style={{ width: "18rem", margin: "0 auto" }}>
+      <img
+        src={`https://starwars-visualguide.com/assets/img/starships/${starships.uid}.jpg`}
+        className="card-img-top"
+        alt={`${starships.name} Image`}
+        onError={(e) =>
+          (e.target.src =
+            "https://starwars-visualguide.com/assets/img/placeholder.jpg")
+        }
+      />
       <div className="card-body">
         <h5 className="card-title">{starships.name}</h5>
         <p className="card-text">

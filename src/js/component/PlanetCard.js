@@ -8,7 +8,7 @@ export const PlanetCard = ({ planets }) => {
   const navigate = useNavigate();
 
   const goToDetailsPage = () => {
-    navigate(`/planets/${planets.uid}`); 
+    navigate(`/planets/${planets.uid}`);
   };
 
   const addToFavorites = () => {
@@ -16,8 +16,16 @@ export const PlanetCard = ({ planets }) => {
   };
 
   return (
-    <div className="card">
-      <img src="..." className="card-img-top" alt="Character Image" />
+    <div className="card" style={{ width: "18rem", margin: "0 auto" }}>
+      <img
+        src={`https://starwars-visualguide.com/assets/img/starships/${planets.uid}.jpg`}
+        className="card-img-top"
+        alt={`${planets.name} Image`}
+        onError={(e) =>
+          (e.target.src =
+            "https://starwars-visualguide.com/assets/img/placeholder.jpg")
+        }
+      />
       <div className="card-body">
         <h5 className="card-title">{planets.name}</h5>
         <p className="card-text">

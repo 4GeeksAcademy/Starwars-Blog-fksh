@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
+
+  const removeFromFavorites = (item) => {
+    actions.removeFavorite(item);
+  };
 
   return (
     <nav className="navbar navbar-light bg-light mb-3">
@@ -25,9 +29,17 @@ export const Navbar = () => {
             {store.favorites.length > 0 ? (
               store.favorites.map((favorite, index) => (
                 <li key={index}>
-                  <a className="dropdown-item" href="#">
-                    {favorite.name} ({favorite.type})
-                  </a>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <span className="dropdown-item">
+                      {favorite.name} ({favorite.type})
+                    </span>
+                    <button
+                      className="btn btn-outline-danger btn-sm ms-2"
+                      onClick={() => removeFromFavorites(favorite)}
+                    >
+                      <i className="fas fa-trash-alt"></i>
+                    </button>
+                  </div>
                 </li>
               ))
             ) : (
