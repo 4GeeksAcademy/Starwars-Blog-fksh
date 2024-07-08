@@ -1,3 +1,26 @@
-/* 
-    General Styles
-*/
+.ml-auto {
+    margin-right: 5%;
+  }
+  
+  .swBtn {
+    margin-left: 5%;
+  }
+  
+  .card-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px; /* Optional: Add bottom padding for aesthetic reasons */
+    padding-left: 10px; /* Optional: Add left padding for aesthetic reasons */
+  }
+  
+  .card-carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 20px; /* Adjust as needed: increased spacing between cards */
+  }
+  
+  .card-carousel-item:last-of-type {
+    margin-right: 10px; /* Remove margin for the last item to prevent unnecessary space */
+  }
+  
