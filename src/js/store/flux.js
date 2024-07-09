@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                   };
                 } catch (error) {
                   console.error(`Error fetching details for ${character.name}:`, error);
-                  return character; // Return character without additional properties if detail fetch fails
+                  return character; 
                 }
               })
             );
@@ -80,7 +80,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                   };
                 } catch (error) {
                   console.error(`Error fetching details for ${starship.name}:`, error);
-                  return starship; // Return starship without additional properties if detail fetch fails
+                  return starship; 
                 }
               })
             );
@@ -129,7 +129,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                   };
                 } catch (error) {
                   console.error(`Error fetching details for ${planet.name}:`, error);
-                  return planet; // Return planet without additional properties if detail fetch fails
+                  return planet; 
                 }
               })
             );

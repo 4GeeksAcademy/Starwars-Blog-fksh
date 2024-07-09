@@ -10,15 +10,19 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-light bg-light mb-3">
-      <Link className="swBtn" to="/">
-        <span className="navbar-brand mb-0 h1">Starwars Blog</span>
+    <nav className="navbar navbar-light bg-secondary mb-3">
+      <Link className="sw-btn" to="/">
+        <img
+          src="https://i.pinimg.com/originals/34/74/ec/3474ecfdf3821bb5cf51eaba871ce312.png"
+          className="navbar-img"
+          alt="Star Wars Logo"
+        />
       </Link>
       <div className="ml-auto">
         <div className="btn-group dropstart">
           <button
             type="button"
-            className="btn btn-primary dropdown-toggle"
+            className="btn btn-black dropdown-toggle"
             data-bs-toggle="dropdown"
             data-bs-display="static"
             aria-expanded="false"

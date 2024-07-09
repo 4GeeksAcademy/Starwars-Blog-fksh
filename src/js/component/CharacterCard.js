@@ -7,10 +7,8 @@ export const CharacterCard = ({ character }) => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
-  console.log("Character data:", character); // Debugging line
-
   const goToDetailsPage = () => {
-    navigate(`/character/${character.uid}`); // Use character.uid to navigate to the correct URL
+    navigate(`/character/${character.uid}`);
   };
 
   const addToFavorites = () => {
@@ -31,12 +29,14 @@ export const CharacterCard = ({ character }) => {
           Hair Color: {character.hair_color} <br />
           Eye Color: {character.eye_color}
         </p>
-        <button className="btn btn-primary" onClick={goToDetailsPage}>
-          Learn more
-        </button>
-        <button className="btn btn-success" onClick={addToFavorites}>
-          <i className="fas fa-heart"></i>
-        </button>
+        <div className="button-container">
+          <button className="btn btn-custom" onClick={goToDetailsPage}>
+            Learn more
+          </button>
+          <button className="btn btn-custom2" onClick={addToFavorites}>
+            <i className="fas fa-heart"></i>
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ export const CharacterList = () => {
   const { store, actions } = useContext(Context);
   const carouselRef = useRef(null);
 
-  // Scroll to beginning of carousel on component load
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = 0;

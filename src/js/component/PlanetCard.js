@@ -33,12 +33,14 @@ export const PlanetCard = ({ planets }) => {
           Population: {planets.population} <br />
           Terrain: {planets.terrain}
         </p>
-        <button className="btn btn-primary" onClick={goToDetailsPage}>
-          Learn more
-        </button>
-        <button className="btn btn-success" onClick={addToFavorites}>
-          <i className="fas fa-heart"></i>
-        </button>
+        <div className="button-container">
+          <button className="btn btn-custom" onClick={goToDetailsPage}>
+            Learn more
+          </button>
+          <button className="btn btn-custom2" onClick={addToFavorites}>
+            <i className="fas fa-heart"></i>
+          </button>
+        </div>
       </div>
     </div>
   );

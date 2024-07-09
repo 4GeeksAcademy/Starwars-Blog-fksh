@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 
 export const ViewStarshipDetails = () => {
   const { store, actions } = useContext(Context);
-  const { id } = useParams(); // Get the id from the URL
+  const { id } = useParams();
 
   useEffect(() => {
     if (id) {
-      actions.getStarshipDetails(id); // Fetch details for the given id
+      actions.getStarshipDetails(id);
     }
   }, [id]);
 
@@ -17,8 +17,7 @@ export const ViewStarshipDetails = () => {
   return (
     <div>
       {details ? (
-        <div>
-          <h1>{details.name}</h1>
+        <div className="starship-details">
           <img
             src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
             alt={`${details.name} Image`}
@@ -28,13 +27,18 @@ export const ViewStarshipDetails = () => {
                 "https://starwars-visualguide.com/assets/img/placeholder.jpg")
             }
           />
-          <p>Manufacturer: {details.manufacturer}</p>
-          <p>Length: {details.length}</p>
-          <p>Crew: {details.crew}</p>
-          <p>Passengers: {details.passengers}</p>
-          <p>Consumables: {details.consumables}</p>
-          <p>Max Atmosphering Speed: {details.max_atmosphering_speed}</p>
-          <p>Hypderdrive Rating: {details.hyperdrive_rating}</p>
+          <div className="starship-info">
+            <h1>{details.name}</h1>
+            <div className="prop-text">
+              <p>Manufacturer: {details.manufacturer}</p>
+              <p>Length: {details.length}</p>
+              <p>Crew: {details.crew}</p>
+              <p>Passengers: {details.passengers}</p>
+              <p>Consumables: {details.consumables}</p>
+              <p>Max Atmosphering Speed: {details.max_atmosphering_speed}</p>
+              <p>Hypderdrive Rating: {details.hyperdrive_rating}</p>
+            </div>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>
