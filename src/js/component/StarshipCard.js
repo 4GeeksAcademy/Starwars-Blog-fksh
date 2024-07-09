@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
 export const StarshipCard = ({ starships }) => {
-  const { store, actions } = useContext(Context);
+  const { actions } = useContext(Context);
   const navigate = useNavigate();
 
   const goToDetailsPage = () => {

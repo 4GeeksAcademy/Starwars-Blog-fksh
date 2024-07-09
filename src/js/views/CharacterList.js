@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { CharacterCard } from "../component/CharacterCard";
 
 export const CharacterList = () => {
-  const { store, actions } = useContext(Context);
+  const { store } = useContext(Context);
   const carouselRef = useRef(null);
 
   useEffect(() => {

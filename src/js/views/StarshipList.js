@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { StarshipCard } from "../component/StarshipCard";
 
 export const StarshipList = () => {
-  const { store, actions } = useContext(Context);
+  const { store } = useContext(Context);
   const carouselRef = useRef(null);
 
   useEffect(() => {

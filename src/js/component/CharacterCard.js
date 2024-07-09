@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
 export const CharacterCard = ({ character }) => {
-  const { store, actions } = useContext(Context);
+  const { actions } = useContext(Context);
   const navigate = useNavigate();
 
   const goToDetailsPage = () => {
@@ -16,7 +16,7 @@ export const CharacterCard = ({ character }) => {
   };
 
   return (
-    <div className="card" style={{ width: "18rem", margin: "0 auto" }}>
+    <div className="card">
       <img
         src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`}
         className="card-img-top"

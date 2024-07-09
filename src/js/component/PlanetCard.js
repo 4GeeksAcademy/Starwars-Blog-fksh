@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
 export const PlanetCard = ({ planets }) => {
-  const { store, actions } = useContext(Context);
+  const { actions } = useContext(Context);
   const navigate = useNavigate();
 
   const goToDetailsPage = () => {
@@ -16,7 +16,7 @@ export const PlanetCard = ({ planets }) => {
   };
 
   return (
-    <div className="card" style={{ width: "18rem", margin: "0 auto" }}>
+    <div className="card">
       <img
         src={`https://starwars-visualguide.com/assets/img/starships/${planets.uid}.jpg`}
         className="card-img-top"
